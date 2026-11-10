@@ -1,0 +1,231 @@
+/*
+ * styles.css
+ * Styles for the TVmaze Show Gallery (Assignment 4).
+ * Layout: Flexbox is used for the search row, the gallery, and each card.
+ */
+
+:root {
+  --page-bg: #eef1f4;
+  --card-bg: #ffffff;
+  --ink: #1b2430;
+  --muted: #566272;
+  --accent: #0f5f66;
+  --accent-dark: #0a4449;
+  --border: #d3d9e0;
+  --error-bg: #fdecea;
+  --error-ink: #8a1c13;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--page-bg);
+}
+
+/* ---------- Header and search ---------- */
+
+.site-header {
+  padding: 2rem 1rem 1.5rem;
+  color: #ffffff;
+  background: var(--ink);
+}
+
+.site-header h1 {
+  max-width: 70rem;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.search-form {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search-row input {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.search-row button {
+  flex: 0 0 auto;
+  padding: 0.65rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--accent);
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-row button:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+.search-row button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f2b705;
+  outline-offset: 2px;
+}
+
+/* ---------- Status messages ---------- */
+
+main {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.status {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.status:empty {
+  display: none;
+}
+
+.status.error {
+  padding: 0.75rem 1rem;
+  color: var(--error-ink);
+  background: var(--error-bg);
+  border-left: 4px solid var(--error-ink);
+}
+
+/* ---------- Gallery and cards ---------- */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 20rem;
+  max-width: 34rem;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.poster,
+.poster-fallback {
+  width: 100%;
+  height: 16rem;
+}
+
+.poster {
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+.poster-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  background: #dfe5ea;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.summary {
+  margin: 0;
+}
+
+.details {
+  margin: 0;
+}
+
+.details div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.details dt {
+  font-weight: 700;
+}
+
+.details dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cast-note {
+  font-style: italic;
+}
+
+.card-link {
+  align-self: flex-start;
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.site-footer a {
+  color: var(--accent);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 30rem) {
+  .card {
+    max-width: none;
+  }
+}

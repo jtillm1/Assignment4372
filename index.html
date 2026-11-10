@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TVmaze Show Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>TVmaze Show Gallery</h1>
+    <form id="search-form" class="search-form">
+      <label for="search-input">Show title or keyword</label>
+      <div class="search-row">
+        <input id="search-input" name="q" type="search" placeholder="Try &quot;office&quot; or &quot;star trek&quot;" autocomplete="off">
+        <button type="submit" id="search-button">Search shows</button>
+      </div>
+    </form>
+  </header>
+
+  <main>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <section id="gallery" class="gallery" aria-label="Search results"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Show data provided by
+      <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze.com</a>
+      and licensed under
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.
+    </p>
+  </footer>
+</body>
+</html>
